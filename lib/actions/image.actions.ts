@@ -9,7 +9,6 @@ import { handleError } from "../utils";
 
 import { v2 as cloudinary } from "cloudinary";
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
 const populateUser = (query: any) =>
   query.populate({
     path: "author",

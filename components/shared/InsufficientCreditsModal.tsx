@@ -22,7 +22,9 @@ export const InsufficientCreditsModal = () => {
       <AlertDialogContent>
         <AlertDialogHeader>
           <div className="flex-between">
-            <p className="p-16-semibold text-dark-400">Insufficient Credits</p>
+            <p className="p-16-semibold text-dark-400">
+              Créditos insuficientes
+            </p>
             <AlertDialogCancel
               className="border-0 p-0 hover:bg-transparent"
               onClick={() => router.push("/profile")}
@@ -45,12 +47,12 @@ export const InsufficientCreditsModal = () => {
           />
 
           <AlertDialogTitle className="p-24-bold text-dark-600">
-            Oops.... Looks like you&#39;ve run out of free credits!
+            Oops.... Parece que você ficou sem créditos gratuitos!
           </AlertDialogTitle>
 
           <AlertDialogDescription className="p-16-regular py-3">
-            No worries, though - you can keep enjoying our services by grabbing
-            more credits.
+            Não se preocupe, você pode continuar aproveitando nossos serviços ao
+            adquirir mais créditos.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
@@ -58,13 +60,13 @@ export const InsufficientCreditsModal = () => {
             className="button w-full bg-purple-100 text-dark-400"
             onClick={() => router.push("/profile")}
           >
-            No, Cancel
+            Não, cancelar
           </AlertDialogCancel>
           <AlertDialogAction
             className="button w-full bg-purple-gradient  bg-cover"
             onClick={() => router.push("/credits")}
           >
-            Yes, Proceed
+            Sim, prosseguir
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>

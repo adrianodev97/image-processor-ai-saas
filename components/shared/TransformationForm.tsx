@@ -206,7 +206,7 @@ const TransformationForm = ({
         <CustomField
           control={form.control}
           name="title"
-          formLabel="Image Title"
+          formLabel="Título da imagem"
           className="w-full"
           render={({ field }) => <Input {...field} className="input-field" />}
         />
@@ -215,7 +215,7 @@ const TransformationForm = ({
           <CustomField
             control={form.control}
             name="aspectRatio"
-            formLabel="Aspect Ratio"
+            formLabel="Dimensões"
             className="w-full"
             render={({ field }) => (
               <Select
@@ -225,7 +225,7 @@ const TransformationForm = ({
                 value={field.value}
               >
                 <SelectTrigger className="select-field">
-                  <SelectValue placeholder="Select size" />
+                  <SelectValue placeholder="Selecione o tamanho" />
                 </SelectTrigger>
                 <SelectContent>
                   {Object.keys(aspectRatioOptions).map((key) => (
@@ -245,7 +245,9 @@ const TransformationForm = ({
               control={form.control}
               name="prompt"
               formLabel={
-                type === "remove" ? "Object to remove" : "Object to recolor"
+                type === "remove"
+                  ? "Objeto para remover"
+                  : "Objeto para recolorir"
               }
               className="w-full"
               render={({ field }) => (
@@ -268,7 +270,7 @@ const TransformationForm = ({
               <CustomField
                 control={form.control}
                 name="color"
-                formLabel="Replacement Color"
+                formLabel="Cor de substituição"
                 className="w-full"
                 render={({ field }) => (
                   <Input
@@ -322,14 +324,14 @@ const TransformationForm = ({
             disabled={isTransforming || newTransformation === null}
             onClick={onTransformHandler}
           >
-            {isTransforming ? "Transforming..." : "Apply Transformation"}
+            {isTransforming ? "Transformando..." : "Aplicar Transformação"}
           </Button>
           <Button
             type="submit"
             className="submit-button capitalize"
             disabled={isSubmitting}
           >
-            {isSubmitting ? "Submitting..." : "Save Image"}
+            {isSubmitting ? "Enviando..." : "Salvar Imagem"}
           </Button>
         </div>
       </form>
