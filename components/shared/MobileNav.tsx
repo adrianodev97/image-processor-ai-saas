@@ -21,7 +21,7 @@ const MobileNav = () => {
           height={50}
           alt="logo"
         />
-        <h1 className="text-2xl font-bold text-purple-500">Logo</h1>
+        <h1 className="text-2xl font-bold text-purple-500">Pixly</h1>
       </Link>
 
       <nav className="flex gap-2">
@@ -47,7 +47,7 @@ const MobileNav = () => {
                     height={50}
                     alt="logo"
                   />
-                  <h1 className="text-2xl font-bold text-purple-500">Logo</h1>
+                  <h1 className="text-2xl font-bold text-purple-500">Pixly</h1>
                 </Link>
                 <ul className="header-nav_elements">
                   {navLinks.map((link) => {

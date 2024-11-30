@@ -20,7 +20,7 @@ const Sidebar = () => {
             height={50}
             alt="logo"
           />
-          <h1 className="text-2xl font-bold text-purple-500">Logo</h1>
+          <h1 className="text-2xl font-bold text-purple-500">Pixly</h1>
         </Link>
 
         <nav className="sidebar-nav">
