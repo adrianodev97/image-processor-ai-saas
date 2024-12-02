@@ -35,8 +35,8 @@ const MediaUploader = ({
     onValueChange(result?.info?.public_id);
 
     toast({
-      title: "Image uploaded successfully",
-      description: "1 credit was deducted from your account",
+      title: "Imagem carregada com sucesso",
+      description: "",
       duration: 5000,
       className: "success-toast",
     });

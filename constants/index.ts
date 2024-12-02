@@ -101,5 +101,3 @@ export const defaultValues = {
   prompt: "",
   publicId: "",
 };
-
-export const creditFee = -1;
