@@ -24,7 +24,7 @@ export async function addImage({ image, userId, path }: AddImageParams) {
     const author = await User.findById(userId);
 
     if (!author) {
-      throw new Error("User not found");
+      throw new Error("Usuário não encontrado");
     }
 
     const newImage = await Image.create({
@@ -48,7 +48,7 @@ export async function updateImage({ image, userId, path }: UpdateImageParams) {
     const imageToUpdate = await Image.findById(image._id);
 
     if (!imageToUpdate || imageToUpdate.author.toHexString() !== userId) {
-      throw new Error("Unauthorized or image not found");
+      throw new Error("Não autorizado ou imagem não encontrada");
     }
 
     const updatedImage = await Image.findByIdAndUpdate(
@@ -85,7 +85,7 @@ export async function getImageById(imageId: string) {
 
     const image = await populateUser(Image.findById(imageId));
 
-    if (!image) throw new Error("Image not found");
+    if (!image) throw new Error("Imagem não encontrada");
 
     return JSON.parse(JSON.stringify(image));
   } catch (error) {

@@ -36,7 +36,7 @@ const MediaUploader = ({
 
     toast({
       title: "Imagem carregada com sucesso",
-      description: "",
+      description: "Sua imagem foi enviada e está pronta para uso.",
       duration: 5000,
       className: "success-toast",
     });
@@ -44,8 +44,8 @@ const MediaUploader = ({
 
   const onUploadErrorHandler = () => {
     toast({
-      title: "Something went wrong while uploading",
-      description: "Please try again",
+      title: "Algo deu errado durante o upload",
+      description: "Por favor, tente novamente",
       duration: 5000,
       className: "error-toast",
     });
