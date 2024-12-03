@@ -28,22 +28,22 @@ export const DeleteConfirmation = ({ imageId }: { imageId: string }) => {
           className="button h-[44px] w-full md:h-[54px]"
           variant="destructive"
         >
-          Delete Image
+          Deletar imagem
         </Button>
       </AlertDialogTrigger>
 
       <AlertDialogContent className="flex flex-col gap-10">
         <AlertDialogHeader>
           <AlertDialogTitle>
-            Are you sure you want to delete this image?
+            Tem certeza que deseja deletar essa imagem?
           </AlertDialogTitle>
           <AlertDialogDescription className="p-16-regular">
-            This will permanently delete this image
+            Essa ação é irreversível.
           </AlertDialogDescription>
         </AlertDialogHeader>
 
         <AlertDialogFooter>
-          <AlertDialogCancel>Cancel</AlertDialogCancel>
+          <AlertDialogCancel>Cancelar</AlertDialogCancel>
           <AlertDialogAction
             className="border bg-red-500 text-white hover:bg-red-600"
             onClick={() =>

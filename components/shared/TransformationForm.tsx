@@ -17,18 +17,15 @@ import { Form } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import {
   aspectRatioOptions,
-  creditFee,
   defaultValues,
   transformationTypes,
 } from "@/constants";
 import { addImage, updateImage } from "@/lib/actions/image.actions";
-import { updateCredits } from "@/lib/actions/user.actions";
 import { AspectRatioKey, debounce, deepMergeObjects } from "@/lib/utils";
 import { getCldImageUrl } from "next-cloudinary";
 import { useRouter } from "next/navigation";
-import { useEffect, useState, useTransition } from "react";
+import { useEffect, useState } from "react";
 import { CustomField } from "./CustomField";
-import { InsufficientCreditsModal } from "./InsufficientCreditsModal";
 import MediaUploader from "./MediaUploader";
 import TransformedImage from "./TransformedImage";
 
@@ -45,7 +42,6 @@ const TransformationForm = ({
   data = null,
   userId,
   type,
-  creditBalance,
   config = null,
 }: TransformationFormProps) => {
   const transformationType = transformationTypes[type];
@@ -55,7 +51,6 @@ const TransformationForm = ({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isTransforming, setIsTransforming] = useState(false);
   const [transformationConfig, setTransformationConfig] = useState(config);
-  const [, startTransition] = useTransition();
   const router = useRouter();
 
   const initialValues =
@@ -187,10 +182,6 @@ const TransformationForm = ({
     );
 
     setNewTransformation(null);
-
-    startTransition(async () => {
-      await updateCredits(userId, creditFee);
-    });
   };
 
   useEffect(() => {
@@ -202,11 +193,10 @@ const TransformationForm = ({
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        {creditBalance < Math.abs(creditFee) && <InsufficientCreditsModal />}
         <CustomField
           control={form.control}
           name="title"
-          formLabel="Image Title"
+          formLabel="Título da imagem"
           className="w-full"
           render={({ field }) => <Input {...field} className="input-field" />}
         />
@@ -215,7 +205,7 @@ const TransformationForm = ({
           <CustomField
             control={form.control}
             name="aspectRatio"
-            formLabel="Aspect Ratio"
+            formLabel="Dimensões"
             className="w-full"
             render={({ field }) => (
               <Select
@@ -225,7 +215,7 @@ const TransformationForm = ({
                 value={field.value}
               >
                 <SelectTrigger className="select-field">
-                  <SelectValue placeholder="Select size" />
+                  <SelectValue placeholder="Selecione o tamanho" />
                 </SelectTrigger>
                 <SelectContent>
                   {Object.keys(aspectRatioOptions).map((key) => (
@@ -245,7 +235,9 @@ const TransformationForm = ({
               control={form.control}
               name="prompt"
               formLabel={
-                type === "remove" ? "Object to remove" : "Object to recolor"
+                type === "remove"
+                  ? "Objeto para remover"
+                  : "Objeto para recolorir"
               }
               className="w-full"
               render={({ field }) => (
@@ -268,7 +260,7 @@ const TransformationForm = ({
               <CustomField
                 control={form.control}
                 name="color"
-                formLabel="Replacement Color"
+                formLabel="Cor de substituição"
                 className="w-full"
                 render={({ field }) => (
                   <Input
@@ -322,14 +314,14 @@ const TransformationForm = ({
             disabled={isTransforming || newTransformation === null}
             onClick={onTransformHandler}
           >
-            {isTransforming ? "Transforming..." : "Apply Transformation"}
+            {isTransforming ? "Transformando..." : "Aplicar Transformação"}
           </Button>
           <Button
             type="submit"
             className="submit-button capitalize"
             disabled={isSubmitting}
           >
-            {isSubmitting ? "Submitting..." : "Save Image"}
+            {isSubmitting ? "Enviando..." : "Salvar Imagem"}
           </Button>
         </div>
       </form>

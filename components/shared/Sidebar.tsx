@@ -10,18 +10,17 @@ import { usePathname } from "next/navigation";
 const Sidebar = () => {
   const pathname = usePathname();
 
-  console.log(navLinks);
-
   return (
     <aside className="sidebar">
       <div className="flex size-full flex-col gap-4">
-        <Link href={"/"} className="sidebar-logo">
+        <Link href={"/"} className="sidebar-logo flex items-center">
           <Image
-            src={"/assets/images/logo-text.svg"}
-            width={180}
-            height={28}
+            src={"/assets/images/logo-icon.svg"}
+            width={50}
+            height={50}
             alt="logo"
           />
+          <h1 className="text-2xl font-bold text-purple-500">Pixly</h1>
         </Link>
 
         <nav className="sidebar-nav">

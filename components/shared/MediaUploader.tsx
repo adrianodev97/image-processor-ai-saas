@@ -35,8 +35,8 @@ const MediaUploader = ({
     onValueChange(result?.info?.public_id);
 
     toast({
-      title: "Image uploaded successfully",
-      description: "1 credit was deducted from your account",
+      title: "Imagem carregada com sucesso",
+      description: "Sua imagem foi enviada e está pronta para uso.",
       duration: 5000,
       className: "success-toast",
     });
@@ -44,8 +44,8 @@ const MediaUploader = ({
 
   const onUploadErrorHandler = () => {
     toast({
-      title: "Something went wrong while uploading",
-      description: "Please try again",
+      title: "Algo deu errado durante o upload",
+      description: "Por favor, tente novamente",
       duration: 5000,
       className: "error-toast",
     });
@@ -53,7 +53,7 @@ const MediaUploader = ({
 
   return (
     <CldUploadWidget
-      uploadPreset="image-processor-ai"
+      uploadPreset="image_processor_ai"
       options={{
         multiple: false,
         resourceType: "image",
@@ -87,7 +87,9 @@ const MediaUploader = ({
                   height={24}
                 />
               </div>
-              <p className="p-14-medium">Click here to upload image</p>
+              <p className="p-14-medium">
+                Clique aqui para fazer upload da imagem
+              </p>
             </div>
           )}
         </div>

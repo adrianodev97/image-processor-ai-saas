@@ -1,4 +1,3 @@
-// ====== USER PARAMS
 declare type CreateUserParams = {
   clerkId: string;
   email: string;
@@ -15,7 +14,6 @@ declare type UpdateUserParams = {
   photo: string;
 };
 
-// ====== IMAGE PARAMS
 declare type AddImageParams = {
   image: {
     title: string;
@@ -69,23 +67,6 @@ declare type Transformations = {
   removeBackground?: boolean;
 };
 
-// ====== TRANSACTION PARAMS
-declare type CheckoutTransactionParams = {
-  plan: string;
-  credits: number;
-  amount: number;
-  buyerId: string;
-};
-
-declare type CreateTransactionParams = {
-  stripeId: string;
-  amount: number;
-  credits: number;
-  plan: string;
-  buyerId: string;
-  createdAt: Date;
-};
-
 declare type TransformationTypeKey =
   | "restore"
   | "fill"
@@ -93,7 +74,6 @@ declare type TransformationTypeKey =
   | "recolor"
   | "removeBackground";
 
-// ====== URL QUERY PARAMS
 declare type FormUrlQueryParams = {
   searchParams: string;
   key: string;
@@ -120,7 +100,6 @@ declare type TransformationFormProps = {
   action: "Add" | "Update";
   userId: string;
   type: TransformationTypeKey;
-  creditBalance: number;
   data?: IImage | null;
   config?: Transformations | null;
 };

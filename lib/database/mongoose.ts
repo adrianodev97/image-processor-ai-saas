@@ -23,7 +23,7 @@ export const connectToDatabase = async () => {
   }
 
   if (!MONGODB_URl) {
-    throw new Error("Missing MONGODB_URL");
+    throw new Error("MONGODB_URL Ausente");
   }
 
   cached.promise =
