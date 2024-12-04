@@ -59,7 +59,6 @@ const ImageDetails = async ({ params: { id } }: SearchParamProps) => {
 
       <section className="mt-10 border-t border-dark-400/15">
         <div className="transformation-grid">
-          {/* MEDIA UPLOADER */}
           <div className="flex flex-col gap-4">
             <h3 className="h3-bold text-dark-600">Original</h3>
 
@@ -72,7 +71,6 @@ const ImageDetails = async ({ params: { id } }: SearchParamProps) => {
             />
           </div>
 
-          {/* TRANSFORMED IMAGE */}
           <TransformedImage
             image={image}
             type={image.transformationType}
@@ -90,7 +88,6 @@ const ImageDetails = async ({ params: { id } }: SearchParamProps) => {
                 Atualizar Imagem
               </Link>
             </Button>
-
             <DeleteConfirmation imageId={image._id} />
           </div>
         )}
