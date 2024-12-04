@@ -1,57 +1,61 @@
-# Image Management Web Application
+# Pixly - Aplicação Web de Processamento de Imagens com IA
 
-Welcome to our Image Management Web Application! This application is designed to help users efficiently manage and organize their image collections. Below, you'll find an overview of the features and setup of our application.
+[Demonstração](https://pixly-ai.vercel.app/) - Experimente a aplicação diretamente no navegador!
 
-## Features
+Bem-vindo à nossa aplicação web de processamento de imagens! Esta aplicação foi projetada para ajudar os usuários a processar imagens de forma eficiente com IA. Abaixo, você encontrará uma visão geral dos recursos e da configuração da aplicação.
 
-### User Authentication
+## Recursos
 
-- Utilizes Clerk Authentication for seamless and secure user authentication.
+### Autenticação de Usuários
 
-### Image Management
+- Utiliza Clerk Authentication para autenticação de usuários de forma segura e integrada.
 
-- Allows users to upload, view, update, and delete images.
-- Provides detailed image information and supports search functionality.
-- Implements pagination for efficient navigation through large image collections.
+### Gerenciamento de Imagens
 
-### Cloudinary Integration
+- Permite aos usuários fazer upload, visualizar, atualizar e excluir imagens.
+- Oferece informações detalhadas sobre as imagens e respectivo processamento realizado
+- Utiliza inteligência artificial para:
+  - Preencher imagens de forma automática.
+  - Remover fundos de imagens.
+  - Melhorar a qualidade de imagens.
+  - Recolorir imagens.
+  - Remover objetos indesejados.
 
-- Seamlessly integrates with Cloudinary for media storage and management.
-- Enables users to upload images to Cloudinary directly from the application.
+### Integração com Cloudinary
 
-## Getting Started
+- Integra-se ao Cloudinary para armazenamento e gerenciamento de mídia.
+- Realiza o processamento de imagens utilizando as funcionalidades avançadas do Cloudinary.
+- Permite o upload direto de imagens para o Cloudinary a partir da aplicação.
 
-### Prerequisites
+## Primeiros Passos
 
-- Node.js and npm, bun or yarn installed on your machine.
+### Pré-requisitos
 
-### Installation
+- Node.js e npm, bun ou yarn instalados na sua máquina.
 
-1. Clone this repository to your local machine.
-2. Navigate to the project directory.
-3. Run `bun install` to install dependencies.
-4. Set up environment variables for Clerk Authentication, Cloudinary.
-5. Run `bun run dev` to start the development server.
+### Instalação
 
-### Usage
+1. Clone este repositório para sua máquina local.
+2. Navegue até o diretório do projeto.
+3. Execute `bun install` para instalar as dependências.
+4. Configure as variáveis de ambiente para Clerk Authentication e Cloudinary.
+5. Execute `bun run dev` para iniciar o servidor de desenvolvimento.
 
-1. Register or login to access the application.
-2. Upload images to your collection.
-3. View, update, or delete images as needed.
-4. Use search and pagination to navigate through your image collection efficiently.
+### Uso
 
-## Technologies Used
+1. Registre-se ou faça login para acessar a aplicação.
+2. Faça upload de imagens para sua coleção.
+3. Visualize, atualize ou exclua imagens conforme necessário.
+4. Use a busca e a paginação para navegar de forma eficiente pela sua coleção de imagens.
 
-- Next.js: A React framework for building web applications.
-- Clerk: Provides authentication and user management solutions.
-- Cloudinary: Cloud-based media management platform.
-- React Hook Form: A library for managing forms in React applications.
-- Zod: A TypeScript-first schema declaration and validation library.
+## Tecnologias Utilizadas
 
-## Contributors
+- Next.js: Um framework React para construção de aplicações web.
+- Clerk: Soluções para autenticação e gerenciamento de usuários.
+- Cloudinary: Plataforma baseada em nuvem para gerenciamento de mídia.
+- React Hook Form: Biblioteca para gerenciamento de formulários em aplicações React.
+- Zod: Biblioteca para declaração e validação de esquemas, com foco em TypeScript.
 
-- \[Adriano\] - \[Owner/Developer\]
+## Contribuidores
 
-## License
-
-- This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+- \[Adriano\] - \[Proprietário/Desenvolvedor\]
