@@ -16,12 +16,11 @@ const MobileNav = () => {
     <header className="header">
       <Link href={"/"} className="flex items-center gap-2 md:py-2">
         <Image
-          src={"/assets/images/logo-icon.svg"}
-          width={50}
-          height={50}
+          src={"/assets/images/logo.png"}
+          width={102}
+          height={32}
           alt="logo"
         />
-        <h1 className="text-2xl font-bold text-purple-500">Pixly</h1>
       </Link>
 
       <nav className="flex gap-2">
@@ -42,12 +41,11 @@ const MobileNav = () => {
               <>
                 <Link href={"/"} className="flex items-center gap-2 md:py-2">
                   <Image
-                    src={"/assets/images/logo-icon.svg"}
-                    width={50}
-                    height={50}
+                    src={"/assets/images/logo.png"}
+                    width={102}
+                    height={32}
                     alt="logo"
                   />
-                  <h1 className="text-2xl font-bold text-purple-500">Pixly</h1>
                 </Link>
                 <ul className="header-nav_elements">
                   {navLinks.map((link) => {
@@ -80,7 +78,7 @@ const MobileNav = () => {
         </SignedIn>
 
         <SignedOut>
-          <Button asChild className="button bg-purple-gradient bg-cover">
+          <Button asChild className="button bg-blue-gradient bg-cover">
             <Link href={"/sign-in"}>Login</Link>
           </Button>
         </SignedOut>
