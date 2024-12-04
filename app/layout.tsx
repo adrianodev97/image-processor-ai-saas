@@ -12,8 +12,8 @@ const IBMPlex = IBM_Plex_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Image Processor AI",
-  description: "AI powered image generator",
+  title: "Pixly",
+  description: "Processador de imagem utilizando IA",
 };
 
 export default function RootLayout({
@@ -25,7 +25,7 @@ export default function RootLayout({
     <ClerkProvider
       appearance={{
         variables: {
-          colorPrimary: "#624cf5",
+          colorPrimary: "#0075ff",
         },
       }}
     >
